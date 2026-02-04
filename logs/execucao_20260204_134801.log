@@ -1,0 +1,9 @@
+2026-02-04 13:48:18,532 - INFO - Imagens em: C:\Users\pedro.paiva\Desktop\RoboSefip-main\imagens
+2026-02-04 13:48:18,533 - INFO - Etapa 0: Limpar Base
+2026-02-04 13:48:20,171 - INFO - Sucesso: ferramentas.png
+2026-02-04 13:48:21,789 - INFO - Sucesso: limpar.png
+2026-02-04 13:48:24,790 - INFO - Etapa 1: Importar
+2026-02-04 13:48:26,427 - INFO - Sucesso: arquivo.png
+2026-02-04 13:48:37,106 - INFO - \u26a0 Não encontrou importar.png após 10s
+2026-02-04 13:48:37,222 - INFO - Aguardando usuário: importar.png
+2026-02-04 13:49:46,768 - INFO - \u2716 Cancelado pelo usuário

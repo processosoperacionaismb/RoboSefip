@@ -1,0 +1,11 @@
+2026-02-04 13:44:31,057 - INFO - Pasta de imagens: C:\Users\pedro.paiva\Desktop\RoboSefip-main\imagens
+2026-02-04 13:44:31,058 - INFO - Iniciando Etapa 0: Limpar Base
+2026-02-04 13:44:32,693 - INFO - Sucesso: ferramentas.png
+2026-02-04 13:44:34,328 - INFO - Sucesso: limpar.png
+2026-02-04 13:44:37,330 - INFO - Iniciando Etapa 1: Importação
+2026-02-04 13:44:38,967 - INFO - Sucesso: arquivo.png
+2026-02-04 13:44:40,601 - INFO - Sucesso: importar.png
+2026-02-04 13:44:46,741 - INFO - Sucesso: ok.png
+2026-02-04 13:44:46,742 - INFO - Iniciando Etapa 2: Remover Daniel
+2026-02-04 13:44:57,368 - INFO - \u26a0 Não encontrou cadastro.png na tela após 10s
+2026-02-04 13:45:00,473 - INFO - \u2716 Processamento cancelado pelo usuário
