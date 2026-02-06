@@ -3,7 +3,7 @@
 Automação inteligente para processamento em lote no SEFIP. O sistema realiza a limpeza da base, importação de arquivos .RE, cadastro de funcionários e retificação de valores automaticamente.
 
 📋 Pré-requisitos
-Python 3.x instalado.
+Python 3 instalado.
 
 SEFIP instalado e com as telas padrão (sem redimensionamento).
 
@@ -40,7 +40,7 @@ Clique em ▶ Iniciar Processamento em Lote.
 
 Aguarde o robô terminar.
 
-Não utilize o computador enquanto o robô estiver movendo o mouse.
+# Não utilize o computador enquanto o robô estiver movendo o mouse.
 
 🔄 Recursos da Versão 1.6
 Tratamento de Erros: Se um botão não for encontrado, o robô perguntará se você deseja Tentar Novamente, Pular ou Cancelar.
