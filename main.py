@@ -1,8 +1,9 @@
 """
 Automação SEFIP - Robô de Processamento
-Versão: 1.6
+Versão: 1.7
 Data: 24/01/2026
 Alterações:
+- v1.7: Adicionada etapa_7_informarfap entre etapas 6 e 8 (antiga etapa 7)
 - v1.6: Implementado sistema de "Tentar Novamente" ou "Pular" quando não localizar imagem
 - v1.5: Implementado novo sistema de log CSV com formato inicio,competencia,valor,fim,status
 - v1.4.1: Corrigido caminho das imagens para funcionar em diferentes máquinas
@@ -11,6 +12,9 @@ Alterações:
 - v1.2: Alterações nas etapas 5, 6 e 7 (trabalhadores2.png, jfescrita2.png, press enter)
 - v1.1: Inclusão da etapa 6 (adicionar_valor) e renumeração da etapa 7
 - v1.0: Versão inicial com 7 etapas de automação
+
+LEMBRETE PARA 06/02/2026 ->  RETOMAR ROBO EM C:Robo_SEFIP\2011\201112
+
 """
 
 import pyautogui
@@ -290,8 +294,18 @@ class RoboSEFIP:
         self.clicar_imagem("salvar.png")
         self.clicar_imagem("sim.png")
 
-    def etapa_7_salvar_retificado(self):
-        self.log_print("Iniciando Etapa 7: Salvar Retificado")
+    def etapa_7_informarfap(self):
+        self.log_print("Iniciando Etapa 7: Informar FAP")
+        self.clicar_imagem("jfescrita.png")
+        self.clicar_imagem("dadosmovimento.png")
+        pyautogui.press('tab')
+        pyautogui.press('tab')
+        pyautogui.write("1")
+        self.clicar_imagem("salvar.png")
+        pyautogui.press('enter')
+
+    def etapa_8_salvar_retificado(self):
+        self.log_print("Iniciando Etapa 8: Salvar Retificado")
         self.clicar_imagem("115.png")
         self.clicar_imagem("executar.png")
         self.log_print("Aguardando confirmação (14 segundos)...")
@@ -365,7 +379,8 @@ def iniciar_automacao_lote(caminho_csv, log_widget, progress_bar, status_label):
                     robo.etapa_4_adicionardanielmodalidade1()
                     robo.etapa_5_adicionardemaismodalidade9()
                     robo.etapa_6_adicionar_valor()
-                    robo.etapa_7_salvar_retificado()
+                    robo.etapa_7_informarfap()
+                    robo.etapa_8_salvar_retificado()
 
                     status = "sucesso"
 
@@ -472,8 +487,7 @@ frame.pack(fill=tk.BOTH, expand=True)
 titulo = ttk.Label(frame, text="Automação SEFIP", font=('Arial', 14, 'bold'))
 titulo.pack(pady=5)
 
-frame_arquivo = ttk.LabelFrame(frame, text=""
-                                           "CSV", padding=10)
+frame_arquivo = ttk.LabelFrame(frame, text="CSV", padding=10)
 frame_arquivo.pack(fill=tk.X, pady=10)
 
 caminho_csv_var = tk.StringVar()
@@ -481,14 +495,14 @@ caminho_csv_var = tk.StringVar()
 
 def selecionar_csv():
     caminho = filedialog.askopenfilename(
-        title="Selecione o arquivo CSV",
+        title="Selecione o CSV",
         filetypes=[("CSV files", "*.csv"), ("All files", "*.*")]
     )
     if caminho:
         caminho_csv_var.set(caminho)
 
 
-ttk.Button(frame_arquivo, text="📁 CSV", command=selecionar_csv).pack(side=tk.LEFT, padx=5)
+ttk.Button(frame_arquivo, text="📁 Selecionar CSV", command=selecionar_csv).pack(side=tk.LEFT, padx=5)
 ttk.Button(frame_arquivo, text="📄 Criar Modelo CSV", command=criar_csv_modelo).pack(side=tk.LEFT, padx=5)
 
 entry_csv = ttk.Entry(frame_arquivo, textvariable=caminho_csv_var, width=50, state='readonly')
